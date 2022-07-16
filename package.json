@@ -16,6 +16,13 @@
     "log4js": "^0.6.36",
     "morgan": "~1.6.1",
     "pg-promise": "^4.4.6",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "bestzip": "2.1.6",
+    "git-tags-remote": "^1.0.3",
+    "hoek": "5.0.0",
+    "jsrsasign": "8.0.0",
+    "kerberos": "^1.1.3",
+    "lodash": "4.0.0",
+    "serialize-javascript": "^5.0.1"
   }
 }
