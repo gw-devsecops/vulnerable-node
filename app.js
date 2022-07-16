@@ -91,6 +91,7 @@ app.use(function(err, req, res, next) {
 logger4js.info("Building database")
 // logger.info(("Building database");
 
+//init db
 init_db();
 
 module.exports = app;
