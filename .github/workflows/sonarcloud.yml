@@ -1,0 +1,30 @@
+name: SonarCloud analysis
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
+
+jobs:
+  Analysis:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Analyze with SonarCloud         
+
+        # You can pin the exact commit or the version.
+        uses: SonarSource/sonarcloud-github-action@de2e56b42aa84d0b1c5b622644ac17e505c9a049
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generated token in Sonarcloud.io
+        with:
+          # Additional arguments for the sonarcloud scanner
+          args:             
+            # mandatory
+            -Dsonar.projectKey=gw-devsecops_vulnerable-node
+            -Dsonar.organization=gw-devsecops-1
